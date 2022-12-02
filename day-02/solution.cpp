@@ -28,9 +28,8 @@ int main() {
         if (enemy == me) first_score += 3;
 
         second_score += me * 3;
-        if (me == 2) second_score += (enemy + 1) % 3 + 1;
-        if (me == 1) second_score += enemy + 1;
-        if (me == 0) second_score += (enemy == 0) ? 3 : enemy ;
+        int temp = (me + enemy) % 3;
+        second_score += temp == 0 ? 3 : temp;
     }
     cout << "First Score: " << first_score << endl;
     cout << "Second Score: " << second_score << endl;
